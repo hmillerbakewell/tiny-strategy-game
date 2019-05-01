@@ -1,0 +1,185 @@
+<head>
+    <script src="strategy.js"></script>
+    <script src="jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="normalize.css" />
+    <style>
+        .turns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            text-align: center;
+        }
+
+        .cell {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .traits {
+            color: #bbb;
+        }
+
+        .cell.label {
+            grid-column: 1;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        .glyph {
+            width: 50px;
+            height: 50px;
+            float: left;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 50px;
+        }
+
+        p {
+            padding: 1em;
+            text-align: justify;
+        }
+
+        .pretenders {
+            border-top: 2px solid #bbb;
+            border-left: 1px solid #bbb;
+            border-right: 1px solid #bbb;
+        }
+
+        .threetall {
+            grid-row: span 2;
+            grid-column-start: 1;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .historyNumbers {
+            width: 100%;
+            height: 100%;
+            grid-column-start: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chameleon-hover,
+        .chameleon-click {
+            background-color: lightblue;
+            transition: background-color 3s;
+            padding: 20px;
+        }
+
+        .emptyrow {
+            padding: 0.5em;
+            grid-column: span 2;
+        }
+
+        .distribution {
+            text-align: center;
+            transition: background-color 1s;
+            align-self: center;
+        }
+
+        .distribution>button {
+            min-width: 25%
+        }
+
+        .territory {
+            text-align: center;
+        }
+
+        .territory>button {
+            width: 100%;
+            height: 100%;
+        }
+
+        .glow {
+            background-color: #fdd;
+        }
+
+        .highlight {
+            background-color: #eee;
+        }
+
+        .fadeFrom {
+            background-color: #fbb;
+        }
+
+        .characters {
+            display: grid;
+            text-align: left;
+            grid-template-columns: auto auto 1fr;
+            width: 25em;
+            margin: auto;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: large;
+            border-bottom: 1px solid #bbb;
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+
+        .row {
+            grid-column-start: 1;
+            grid-column-end: 8;
+        }
+
+        .semirow {
+            grid-column-start: 2;
+            grid-column-end: 7;
+            text-align: center;
+        }
+
+        #gameContent {
+            width: 50em;
+            min-height: 100%;
+            margin: auto;
+            border-left: 1px solid #bbb;
+            border-right: 1px solid #bbb;
+            border-bottom: 1px solid #bbb;
+            display: grid;
+            grid-template-columns: 75px repeat(5, 1fr) 75px;
+            background-color: white;
+        }
+
+        .religion {
+            grid-column-start: 2;
+        }
+
+        .military {
+            grid-column-start: 3;
+        }
+
+        .financial {
+            grid-column-start: 4;
+        }
+
+        .learning {
+            grid-column-start: 5;
+        }
+
+        .popularity {
+            grid-column-start: 6;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-size: large;
+        }
+        .alert{
+            position: absolute;
+            transition: top 2s;
+            padding: 1em;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 1em;
+        }
+    </style>
+</head>
+
+<body onload="resetBoard();displayTurns()">
+    <div id="gameContent">
+    </div>
+    <div id="alerts"></div>
+</body>
