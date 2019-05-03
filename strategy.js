@@ -147,7 +147,7 @@ var nudge = function (character, choice) {
 
 var turnType = "" // choose, nudge or win
 
-var choiceNames = ["Religion", "Military", "Financial", "Learning", "Popularity"]
+var choiceNames = ["Religion", "Military", "Finance", "Learning", "Popularity"]
 
 var takeTerritory = function (playerChoice) {
     if (turnType = "choose") {
