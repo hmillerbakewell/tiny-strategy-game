@@ -259,7 +259,7 @@ var displayTurns = function () {
             s += getWinner() + ` has gained control of three areas, and won the game!`
         }
         s += ` 
-        <a onclick="resetBoard();displayTurns()">Click here to play again.</a>
+        <button onclick="resetBoard();displayTurns()">Click here to play again.</button>
     </p>
     </div>`
     } else {
@@ -419,6 +419,15 @@ var resetBoard = function () {
         ["Lars", "Anita", "Robin", "Julia", "Gwyn", []]
     ]
     turnType = "nudge"
+
+    characters = []
+    var genTraits = 2
+    var p1 = new Character("Lars", randomTraits(genTraits), "#bdc")
+    var p2 = new Character("Anita", randomTraits(genTraits), "#cbd")
+    var p3 = new Character("Robin", randomTraits(genTraits), "#cdb")
+    var p4 = new Character("Julia", randomTraits(genTraits), "#bcd")
+    var p5 = new Character("Gwyn", randomTraits(genTraits), "#dcb")
+
 }
 
 var announce = function (character, message) {
@@ -434,14 +443,6 @@ var announce = function (character, message) {
             })
     )
 }
-
-var genTraits = 2
-var p1 = new Character("Lars", randomTraits(genTraits), "#bdc")
-var p2 = new Character("Anita", randomTraits(genTraits), "#cbd")
-var p3 = new Character("Robin", randomTraits(genTraits), "#cdb")
-var p4 = new Character("Julia", randomTraits(genTraits), "#bcd")
-var p5 = new Character("Gwyn", randomTraits(genTraits), "#dcb")
-
 var getWinner = function () {
     var last = boardHistory[0]
     var points = {}
