@@ -307,7 +307,7 @@ var displayTurns = function () {
 
         choiceNames.forEach((c, i) => s += `<div class="pretenders territory cell ${choiceNames[i]}"
     style="${colour(boardHistory[0][i])}; text-align:center;">
-    ${glyph(boardHistory[0][i])}
+    ${glyph(boardHistory[0][i])} ${choiceNames[i]}
     </div>`)
 
         s += `<div class="emptyrow"></div>`
